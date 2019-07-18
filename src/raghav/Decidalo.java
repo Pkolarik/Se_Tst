@@ -27,6 +27,10 @@ public class Decidalo {
 	}
 
 	public static void setBrowserConfig(){
+		
+		String projectLocation = System.getProperty("user.dir");
+		
+		System.out.println(projectLocation);
 
 		//Configuration for Firefox browser
 		if(browser.contains("Firefox")){
