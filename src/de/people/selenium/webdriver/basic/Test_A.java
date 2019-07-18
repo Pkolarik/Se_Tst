@@ -11,9 +11,10 @@ public class Test_A {
 	WebDriver driver;
 	
 	public void invokeBrowser(){
+		String projectLocation = System.getProperty("user.dir");
 		
 		try {
-			System.setProperty("webdriver.chrome.driver", "C:\\Users\\A307951\\Selenium\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", projectLocation+"\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver();
 			/*driver.manage().deleteAllCookies();*/
 			driver.manage().window().maximize();

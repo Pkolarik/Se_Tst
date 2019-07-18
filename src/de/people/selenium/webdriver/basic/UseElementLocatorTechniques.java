@@ -11,10 +11,10 @@ public class UseElementLocatorTechniques {
 	WebDriver driver; // ctrl+shift+o
 
 	public void invokeBrowser(String url) {
-
+		String projectLocation = System.getProperty("user.dir");
+		
 		try {
-			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\A307951\\Selenium\\chromedriver_win32\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", projectLocation+"\\chromedriver_win32\\chromedriver.exe");
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

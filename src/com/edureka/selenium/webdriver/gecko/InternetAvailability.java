@@ -11,8 +11,9 @@ public class InternetAvailability {
 	WebDriver driver;
 	
 	public void invokeBrowser(String url){
+		String projectLocation = System.getProperty("user.dir");
 		try {
-			System.setProperty("webdriver.gecko.driver", "C:\\Users\\A307951\\Selenium\\geckodriver-v0.24.0-win64\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", projectLocation+"\\geckodriver-v0.24.0-win64\\geckodriver.exe");
 			WebDriver driver = new FirefoxDriver();
 			driver.manage().deleteAllCookies();
 			driver.manage().window().maximize();
