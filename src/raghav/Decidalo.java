@@ -37,10 +37,10 @@ public class Decidalo {
 			System.out.println(prop.getProperty("browser"));
 			System.out.println(prop.getProperty("username"));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 	}
