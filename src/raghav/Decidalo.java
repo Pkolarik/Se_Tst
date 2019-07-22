@@ -34,8 +34,8 @@ public class Decidalo {
 		try {
 			InputStream input = new FileInputStream(projectLocation+"\\src\\raghav\\data.properties");
 			prop.load(input);
-			System.out.println(prop.getProperty("browser"));
-			System.out.println(prop.getProperty("username"));
+			System.out.println("Browser: "+prop.getProperty("browser"));
+			System.out.println("Login Name: "+prop.getProperty("username"));
 		} catch (FileNotFoundException e) {
 			
 			e.printStackTrace();
@@ -52,10 +52,9 @@ public class Decidalo {
 
 	public static void setBrowserConfig(){
 
-		//String projectLocation = System.getProperty("user.dir");
-
-		System.out.println(projectLocation);
-		System.out.println(prop.getProperty("driverLocation"));
+		
+		System.out.println("Projekt: "+projectLocation);
+		System.out.println("Drivers befinden sich in: "+prop.getProperty("driverLocation"));
 
 		//Configuration for Firefox browser
 		if(browser.contains("Firefox")){
