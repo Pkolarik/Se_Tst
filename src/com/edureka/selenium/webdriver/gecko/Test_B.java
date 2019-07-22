@@ -1,5 +1,6 @@
 package com.edureka.selenium.webdriver.gecko;
 
+
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,6 +18,8 @@ public class Test_B {
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 			driver.get(url);
+			System.out.println("von Katharina");
+
 		} catch (Exception e) {
 			
 			e.printStackTrace();
