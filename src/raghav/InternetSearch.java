@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,8 +26,12 @@ public class InternetSearch {
 
 	}
 
+	static Properties prop = new Properties();
 	public static void readDataFile(){
 		try {
+			
+			
+			
 			InputStream input = new FileInputStream(projectLocation+"\\src\\raghav\\data.properties");
 			prop.load(input);
 			System.out.println("Browser: "+prop.getProperty("browser"));
@@ -42,8 +47,8 @@ public class InternetSearch {
 	
 	public static void setBrowser(){
 		
-		browser = "Firefox";
-		//browser = "Chrome";
+		browser = prop.getProperty("browser");
+		
 	}
 
 	public static void setBrowserConfig(){
