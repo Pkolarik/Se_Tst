@@ -1,5 +1,10 @@
 package raghav;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,15 +14,32 @@ public class InternetSearch {
 
 	static String browser;
 	static WebDriver driver;
+	static String projectLocation = System.getProperty("user.dir");
 
 	public static void main(String[] args) {
 
+		readDataFile();
 		setBrowser();
 		setBrowserConfig();
 		runTest();
 
 	}
 
+	public static void readDataFile(){
+		try {
+			InputStream input = new FileInputStream(projectLocation+"\\src\\raghav\\data.properties");
+			prop.load(input);
+			System.out.println("Browser: "+prop.getProperty("browser"));
+			System.out.println("Login Name: "+prop.getProperty("username"));
+		} catch (FileNotFoundException e) {
+			
+			e.printStackTrace();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+	}
+	
 	public static void setBrowser(){
 		
 		browser = "Firefox";
