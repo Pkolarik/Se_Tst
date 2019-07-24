@@ -30,7 +30,7 @@ public class InternetSearch {
 	public static void readDataFile(){
 		try {
 			
-			
+			// Kommentar von Katharina
 			
 			InputStream input = new FileInputStream(projectLocation+"\\src\\raghav\\data.properties");
 			prop.load(input);
