@@ -9,19 +9,20 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 
 public class TestZinsenrechner_Einstieg_mac {
-	
+		
 
-	
-static String browser_mac;
-static WebDriver driver_mac;
 static String projectLocation_mac = System.getProperty("user.dir");
 static Properties prop_mac = new Properties();
+
+
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		System.out.println("ProjectLocation ist: "+ projectLocation_mac); // /Users/kasia2/git/Se_Tst
 		readDataFile_mac();
+		//setBrowser(prop_mac);
+		
 	}
 	
 	public static void readDataFile_mac(){
