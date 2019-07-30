@@ -21,8 +21,6 @@ public class  TestZinsenrechner_BrowserSetup {
 		System.out.println("Mein Browser: "+ browser); 
 		return browser;
 		
-		
-
 	}
 	
    public WebDriver setBrowserConfig(String browser, Properties prop){
@@ -32,16 +30,15 @@ public class  TestZinsenrechner_BrowserSetup {
 		//Configuration for Firefox browser
 		if(browser.contains("Firefox")){
 			
-			//System.setProperty("webdriver.gecko.driver", prop.getProperty("driverLocation")+"geckodriver");
-			System.setProperty("webdriver.gecko.driver", prop.getProperty("driverLocation"));
+			System.setProperty("webdriver.gecko.driver", prop.getProperty("firefoxDriverLocation"));
 			driver = new FirefoxDriver();
 		}
 
 		//Configuration for Chrome browser
 		if(browser.contains("Chrome")){
 			
-			//System.setProperty("webdriver.chrome.driver", prop.getProperty("driverLocation")+"chromedriver");
-			System.setProperty("webdriver.chrome.driver", prop.getProperty("driverLocation")+"chromedriver.exe");
+			
+			System.setProperty("webdriver.chrome.driver", prop.getProperty("chromeDriverLocation"));
 			driver = new ChromeDriver();
 		
 		}

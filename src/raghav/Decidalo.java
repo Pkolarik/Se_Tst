@@ -32,7 +32,8 @@ public class Decidalo {
 
 	public static void readDataFile(){
 		try {
-			InputStream input = new FileInputStream(projectLocation+"\\src\\raghav\\data.properties");
+			//InputStream input = new FileInputStream(projectLocation+"\\src\\raghav\\data.properties");
+			InputStream input = new FileInputStream(projectLocation+"/src/raghav/data.properties");
 			prop.load(input);
 			System.out.println("Browser: "+prop.getProperty("browser"));
 			System.out.println("Login Name: "+prop.getProperty("username"));
