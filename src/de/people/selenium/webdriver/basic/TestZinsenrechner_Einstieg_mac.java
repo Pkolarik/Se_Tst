@@ -11,28 +11,48 @@ import org.openqa.selenium.WebDriver;
 public class TestZinsenrechner_Einstieg_mac {
 		
 
-static String projectLocation_mac = System.getProperty("user.dir");
-static Properties prop_mac = new Properties();
+	static Properties prop_mac = new Properties();
+	
+	static TestZinsenrechner_BrowserSetup zrBrowserMac = new TestZinsenrechner_BrowserSetup();
+	
+	
+
 
 
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		String projectLocation_mac = System.getProperty("user.dir");
+		String myBrowser;
+		WebDriver myDriver;
+
+		ZinsenRechner_Testfall1  meinTestfall = new ZinsenRechner_Testfall1 (); 
+		
+		
+		
 		System.out.println("ProjectLocation ist: "+ projectLocation_mac); // /Users/kasia2/git/Se_Tst
-		readDataFile_mac();
-		//setBrowser(prop_mac);
+		readDataFile_mac(projectLocation_mac);
+		myBrowser = zrBrowserMac.setBrowser(prop_mac);
+		
+		System.out.println("Mein Browser: "+ myBrowser); 
+		myDriver = zrBrowserMac.setBrowserConfig(myBrowser, prop_mac);
+		meinTestfall.Testfall1_defaultEinstellungen(myDriver, prop_mac);
+		
+		
+		
 		
 	}
 	
-	public static void readDataFile_mac(){
+	public static void readDataFile_mac(String projectLoc){
 		try {
 		 
-			InputStream input = new FileInputStream(projectLocation_mac+"/src/de/people/selenium/webdriver/basic/data.properties");
+			InputStream input = new FileInputStream(projectLoc+"/src/de/people/selenium/webdriver/basic/data.properties");
 			System.out.println("Input ist: "+input);
 			prop_mac.load(input);
-			System.out.println("Browser: "+prop_mac.getProperty("browser"));
-			System.out.println("Login Name: "+prop_mac.getProperty("username"));
+			System.out.println("Mein Browser: "+prop_mac.getProperty("browser"));
+			System.out.println("Mein Login Name: "+prop_mac.getProperty("username"));
+			
 			
 			
 				
