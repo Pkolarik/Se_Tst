@@ -60,14 +60,14 @@ public class Decidalo {
 		//Configuration for Firefox browser
 		if(browser.contains("Firefox")){
 			
-			System.setProperty("webdriver.gecko.driver", prop.getProperty("driverLocation")+"\\geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", prop.getProperty("firefoxDriverLocation"));
 			driver = new FirefoxDriver();
 		}
 
 		//Configuration for Chrome browser
 		if(browser.contains("Chrome")){
 			
-			System.setProperty("webdriver.chrome.driver", prop.getProperty("driverLocation")+"\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", prop.getProperty("chromeDriverLocation"));
 			driver = new ChromeDriver();
 
 		}
