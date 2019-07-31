@@ -2,3 +2,4 @@ data.properties
 *.exe
 *.jar
 .classpath
+/bin
