@@ -24,7 +24,12 @@ public class TestZinsenrechner_KPA_tutorial {
 		String Eingabe_alsText = "3456,50";
 		Eingabe_alsText.replace(",", ".");
 	
-
+		int[] numbers = {1, 2, 3, 4, 5};
+	    int sum;
+	    for (int number : numbers) {
+	        sum = +number;
+	        System.out.println(sum);
+	    }
 		 
 		
 		BigDecimal Eingabe= new BigDecimal(Eingabe_alsText);
