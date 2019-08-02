@@ -19,6 +19,7 @@ public class Decidalo {
 	static String projectLocation = System.getProperty("user.dir");
 	static Properties prop = new Properties();
 
+
 	public static void main(String[] args){
 
 		readDataFile();
@@ -31,12 +32,11 @@ public class Decidalo {
 
 	public static void readDataFile(){
 		try {
-			
+			//InputStream input = new FileInputStream(projectLocation+"\\src\\raghav\\data.properties");
 			InputStream input = new FileInputStream(projectLocation+"/src/raghav/data.properties");
-			
 			prop.load(input);
 			System.out.println("Browser: "+prop.getProperty("browser"));
-			System.out.println("Login Name: "+prop.getProperty("ciamUsername"));
+			System.out.println("Login Name: "+prop.getProperty("username"));
 		} catch (FileNotFoundException e) {
 			
 			e.printStackTrace();
@@ -54,8 +54,8 @@ public class Decidalo {
 	public static void setBrowserConfig(){
 
 		
-		//System.out.println("Projekt: "+projectLocation);
-		//System.out.println("Drivers befinden sich in: "+prop.getProperty("driverLocation"));
+		System.out.println("Projekt: "+projectLocation);
+		System.out.println("Drivers befinden sich in: "+prop.getProperty("driverLocation"));
 
 		//Configuration for Firefox browser
 		if(browser.contains("Firefox")){
@@ -75,10 +75,10 @@ public class Decidalo {
 
 	public static void runTest()  {
 		
-		driver.get(prop.getProperty("decidaloUrl"));
+		driver.get("https://decidalo.telekom.de/");
 		driver.manage().window().maximize();
-		driver.findElement(By.id("username")).sendKeys(prop.getProperty("ciamUsername"));
-		driver.findElement(By.id("password")).sendKeys(prop.getProperty("ciamPassword"));
+		driver.findElement(By.id("username")).sendKeys(prop.getProperty("username"));
+		driver.findElement(By.id("password")).sendKeys(prop.getProperty("password"));
 		driver.findElement(By.id("btnLogin")).click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);

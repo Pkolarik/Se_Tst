@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+-<suite name="All Test Suite">
+-<test name="/Users/kasia2/IdeaProjects/myProject_1/src" preserve-order="true" verbose="2">
+-<classes>
+-<class name="FirstTestCase">
+-<methods>
+<include name="setup"/>
+<include name="login"/>
+<include name="teardown"/>
+</methods>
+</class>
+
+-<class name="SecondTestCase">
+-<methods>
+<include name="setup2"/>
+<include name="login2"/>
+<include name="teardown"/>
+</methods>
+</class>
+</classes>
+</test>
+</suite>

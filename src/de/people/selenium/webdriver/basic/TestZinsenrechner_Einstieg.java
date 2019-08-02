@@ -23,7 +23,7 @@ public class TestZinsenrechner_Einstieg {
 
 		//ZinsenRechner_Testfallxxx  meinTestfall = new ZinsenRechner_Testfallxxx (); 
 		
-		//
+		
 		
 		System.out.println("ProjectLocation ist: "+ projectLocation_windows); 
 		readDataFile_windows(projectLocation_windows);
@@ -32,7 +32,8 @@ public class TestZinsenrechner_Einstieg {
 		System.out.println("Mein Browser: "+ myBrowser); 
 		myDriver = zrBrowserWindows.setBrowserConfig(myBrowser, prop_windows);
 		//meinTestfall.Testfallxxx_defaultEinstellungen(myDriver, prop_windows);
-			
+		
+		
 		
 	}
 	
