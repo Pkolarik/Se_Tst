@@ -49,14 +49,22 @@ public class ZinsenRechner_Testfall1 {
 	
 	int Vergleich = 0; 
 	
-	
+	try {
 		
 	System.out.println("Schritt 1 und die URL: " +myURL);	
 	driver.get(myURL);
 	System.out.println("Schritt 2");
 	// ************** Anfangskapital eintragen*******************
+	//ich möchte sehen, was in dem Feld enthalten ist
+	//System.out.println("IM feld steht" + driver.findElement(By.xpath("//input[@name='anfangskapital']")).getText());
+	
     driver.findElement(By.xpath("//input[@name='anfangskapital']")).clear();
     System.out.println("Schritt 3");
+    driver.findElement(By.xpath("//input[@name='anfangskapital']")).click();
+    
+    
+    
+    System.out.println("Initialwert: " + Eingabe_alsText);	
     driver.findElement(By.xpath("//input[@name='anfangskapital']")).sendKeys(Eingabe_alsText);
     System.out.println("Schritt 4");
     
@@ -108,8 +116,8 @@ public class ZinsenRechner_Testfall1 {
     System.out.println("Schritt 6");
     
  // ************** Ergebnis prüfen *******************************
-    Eingabe_alsText = driver.findElement(By.xpath("//input[@name='anfangskapital']")).getText();
-    System.out.println("Eingabe als Text nicht konvertiert " + Eingabe_alsText);
+    //Eingabe_alsText = driver.findElement(By.xpath("//input[@name='anfangskapital']")).getText();
+    //System.out.println("Eingabe als Text nicht konvertiert " + Eingabe_alsText);
     
     WebElement TabellenEintrag = driver.findElement(By.xpath("//table[@class='verlauf']/tbody/tr[2]/td[2]"));
     System.out.println("Schritt 7");
@@ -117,7 +125,7 @@ public class ZinsenRechner_Testfall1 {
     
     //hier muss der Eintrag aus dem Feld 'Anfangskapital' übernommen werden
     //wenn die Eingabe falsch war dann wird der Eintrag beim Berechnen mit 1,00 ersetzt
-    Eingabe_alsText = driver.findElement(By.xpath("//input[@name='anfangskapital']")).getText();
+    //Eingabe_alsText = driver.findElement(By.xpath("//input[@name='anfangskapital']")).getText();
     // 1000.00 in 1000,00 umwandeln
     
     Eingabe_alsText2 = Eingabe_alsText.replace(".", "");
@@ -140,8 +148,13 @@ public class ZinsenRechner_Testfall1 {
     else
     	System.out.println("Eingabe und Ausgabe sind nichts gleich \n");
     
+	} catch(Exception e){
+
+	     System.out.print(e);
+	     System.out.println("Testfall1 beendet mit Exception");
+
+	}
     
-    
-    }
+  }
 
 }

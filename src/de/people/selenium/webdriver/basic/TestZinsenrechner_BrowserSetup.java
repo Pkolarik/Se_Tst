@@ -47,6 +47,14 @@ public class  TestZinsenrechner_BrowserSetup {
 
        // driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        /*The implicit wait will tell the WebDriver to wait a certain amount of time before it throws
+         *  a "No Such Element Exception.” The default setting of implicit wait is zero. 
+         *  Once you set the time, the web driver will wait for that particular amount of time before throwing an
+         *   exception."
+         *   
+         *   Wenn ich warten möchte, weil z.B. ein Login etwas dauert, dann muss ein expliziter Wait gemacht werden
+         *   wie Tread.sleep oder new WebDriverWait
+         */
         driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
         System.out.println(driver.getTitle());
 		return driver;

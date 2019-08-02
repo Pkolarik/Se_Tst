@@ -27,7 +27,8 @@ public class TestZinsenrechner_Einstieg_mac {
 		String myBrowser;
 		WebDriver myDriver;
 
-		ZinsenRechner_Testfall1  meinTestfall = new ZinsenRechner_Testfall1 (); 
+		ZinsenRechner_Testfall1  MeinTestfall = new ZinsenRechner_Testfall1 (); 
+		TestZinsenrechner_Ausstieg Ausstieg = new TestZinsenrechner_Ausstieg ();
 		
 		
 		
@@ -37,7 +38,11 @@ public class TestZinsenrechner_Einstieg_mac {
 		
 		System.out.println("Mein Browser: "+ myBrowser); 
 		myDriver = zrBrowserMac.setBrowserConfig(myBrowser, prop_mac);
-		meinTestfall.Testfall1_defaultEinstellungen(myDriver, prop_mac);
+		MeinTestfall.Testfall1_defaultEinstellungen(myDriver, prop_mac);
+		//Test zu Ende - Driver beenden
+		Ausstieg.tearDown(myDriver);
+		
+		
 		
 		
 		
