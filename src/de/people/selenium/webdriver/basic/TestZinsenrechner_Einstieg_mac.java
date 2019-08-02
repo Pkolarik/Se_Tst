@@ -26,6 +26,7 @@ public class TestZinsenrechner_Einstieg_mac {
 		String projectLocation_mac = System.getProperty("user.dir");
 		String myBrowser;
 		WebDriver myDriver;
+		
 
 		ZinsenRechner_Testfall1  meinTestfall = new ZinsenRechner_Testfall1 (); 
 		
