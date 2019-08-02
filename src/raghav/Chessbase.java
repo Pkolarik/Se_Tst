@@ -12,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Decidalo {
+public class Chessbase {
 
 	static String browser;
 	static WebDriver driver;
@@ -36,7 +36,7 @@ public class Decidalo {
 			
 			prop.load(input);
 			System.out.println("Browser: "+prop.getProperty("browser"));
-			System.out.println("Login Name: "+prop.getProperty("ciamUsername"));
+			
 		} catch (FileNotFoundException e) {
 			
 			e.printStackTrace();
@@ -54,8 +54,8 @@ public class Decidalo {
 	public static void setBrowserConfig(){
 
 		
-		//System.out.println("Projekt: "+projectLocation);
-		//System.out.println("Drivers befinden sich in: "+prop.getProperty("driverLocation"));
+		System.out.println("Projekt: "+projectLocation);
+		System.out.println("Drivers befinden sich in: "+prop.getProperty("driverLocation"));
 
 		//Configuration for Firefox browser
 		if(browser.contains("Firefox")){
@@ -75,14 +75,14 @@ public class Decidalo {
 
 	public static void runTest()  {
 		
-		driver.get(prop.getProperty("decidaloUrl"));
+		driver.get(prop.getProperty("chessbaseUrl"));
 		driver.manage().window().maximize();
-		driver.findElement(By.id("username")).sendKeys(prop.getProperty("ciamUsername"));
-		driver.findElement(By.id("password")).sendKeys(prop.getProperty("ciamPassword"));
-		driver.findElement(By.id("btnLogin")).click();
+		//driver.findElement(By.id("username")).sendKeys(prop.getProperty("ciamUsername"));
+		//driver.findElement(By.id("password")).sendKeys(prop.getProperty("ciamPassword"));
+		driver.findElement(By.id("idShopButtonNav")).click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-		driver.findElement(By.className("start-page-description")).click();
+		//driver.findElement(By.className("idShopButtonNav")).click();
 		System.out.println("Alles in Ordnung");
 	} 
 }
