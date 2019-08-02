@@ -28,7 +28,9 @@ public class TestZinsenrechner_Einstieg_mac {
 		WebDriver myDriver;
 		
 
-		ZinsenRechner_Testfall1  meinTestfall = new ZinsenRechner_Testfall1 (); 
+		ZinsenRechner_Testfall1  MeinTestfall = new ZinsenRechner_Testfall1 (); 
+		TestZinsenrechner_Ausstieg Ausstieg = new TestZinsenrechner_Ausstieg ();
+		
 		
 		System.out.println("ProjectLocation ist: "+ projectLocation_mac); // /Users/kasia2/git/Se_Tst
 		readDataFile_mac(projectLocation_mac);
@@ -36,7 +38,9 @@ public class TestZinsenrechner_Einstieg_mac {
 		
 		System.out.println("Mein Browser: "+ myBrowser); 
 		myDriver = zrBrowserMac.setBrowserConfig(myBrowser, prop_mac);
-		meinTestfall.Testfall1_defaultEinstellungen(myDriver, prop_mac);	
+		MeinTestfall.Testfall1_defaultEinstellungen(myDriver, prop_mac);	
+		//Driver beenden
+		Ausstieg.tearDown(myDriver);
 		
 	}
 	
