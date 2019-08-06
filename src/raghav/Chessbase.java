@@ -79,9 +79,28 @@ public class Chessbase {
 		driver.manage().window().maximize();
 				
 		//driver.findElement(By.id("idShopButtonNav")).click();
-		driver.findElement(By.id("container-top-suche")).click();
+		//driver.findElement(By.id("container-top-suche")).click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		
+		//if (driver.findElement(By.id("div-suche")).isDisplayed())
+		  //System.out.println("Is Displayed");
+		//else System.out.println("Is Not Displayed");
+		//driver.findElement(By.id("div-suche")).click();
+		
+		
+		//driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).click();
+		
+		if (driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).isEnabled())
+			  System.out.println("Is Enabled");
+			else System.out.println("Is Not Enabled");
+				
+		
+		if (driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).isDisplayed())
+		  System.out.println("Is Displayed");
+		else System.out.println("Is Not Displayed");
+		
+	
 		
 		System.out.println("Alles in Ordnung");
 	} 
