@@ -8,7 +8,9 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -91,16 +93,22 @@ public class Chessbase {
 		
 		//driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).click();
 		
-		if (driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).isEnabled())
-			  System.out.println("Is Enabled");
-			else System.out.println("Is Not Enabled");
+		//if (driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).isEnabled())
+			//  System.out.println("Is Enabled");
+			//else System.out.println("Is Not Enabled");
 				
 		
-		if (driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).isDisplayed())
-		  System.out.println("Is Displayed");
-		else System.out.println("Is Not Displayed");
+		//if (driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).isDisplayed())
+		  //System.out.println("Is Displayed");
+		//else System.out.println("Is Not Displayed");
 		
-	
+		WebElement elem = driver.findElement(By
+                .xpath("//img[@class='svg grpelem' and @id= 'container-top-suche' and @src='/images/suchen.svg']"));   
+    JavascriptExecutor executor = (JavascriptExecutor) driver;
+    executor.executeScript("arguments[0].click();", elem);
+    driver.findElement(By.id("txtSearch")).sendKeys("AlphaZero");
+    driver.findElement(By.xpath("//img[@id= 'container-search-bar']")).click();
+
 		
 		System.out.println("Alles in Ordnung");
 	} 
