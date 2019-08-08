@@ -43,7 +43,7 @@ public class Testklasse1 {
 		Eingabe_alsText = eingWert.getAttribute("value");
 		System.out.println("Ursprungswert: "+ Eingabe_alsText);
 		
-		// Setze Anfangskapital
+		// Setze neu Anfangskapital
 		eingWert.clear();
 		eingWert.sendKeys(Eingabe_alsText2);
 		Eingabe_alsText2 = eingWert.getAttribute("value");
@@ -76,7 +76,7 @@ public class Testklasse1 {
 	
 	public void ergebnisAuswerten(WebDriver testDriver) {
 		System.out.println("------------------------");
-		System.out.println("Auswertung startet.");
+		System.out.println("Auswertung: Gleicher Ausgangswert erwartet.");
 		System.out.println("------------------------");
 		TabellenEintrag = testDriver.findElement(By.xpath("//table[@class='verlauf']/tbody/tr[2]/td[2]"));
 		TabellenEintrag_str = new String(TabellenEintrag.getText());

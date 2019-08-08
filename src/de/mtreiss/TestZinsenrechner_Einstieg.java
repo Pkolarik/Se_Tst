@@ -16,9 +16,10 @@ public class TestZinsenrechner_Einstieg {
 	
 		System.out.println("Start.");
 		
-	//  data.properties lesen
+	//  Ermittle den Dateipfad in dem die DAtai Data properties abgelegt ist.
 		hdlProps = new handleProperties();
 		projectLocation = hdlProps.getProjectLog();
+		//* Liest hier die Datei data Properties
 		hdlProps.getProperties(projectLocation);
 		
   	//  Browser mit Treiber initialisieren
