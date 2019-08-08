@@ -23,7 +23,7 @@ public class handleProperties {
 	//* Liest die Datei data Properties
 	public Properties getProperties(String projectLoc) {
 	try {
-		prop.load(new FileInputStream(projectLoc+"/src/de/mtreiss/data.properties"));	
+		prop.load(new FileInputStream(projectLoc+"/src/pavel/data.properties"));	
 		System.out.println("Properties sind eingelesen.");
 		}
 	catch (FileNotFoundException e) {System.out.println("FNF Exception found."); }
@@ -48,7 +48,7 @@ public class handleProperties {
 	}
 
 	public String getUrl() {
-		return prop.getProperty("chessbaseUrl");		
+		return prop.getProperty("url");		
 		
 	}
 }

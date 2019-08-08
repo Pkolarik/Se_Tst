@@ -101,12 +101,13 @@ public class Chessbase {
 		//if (driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).isDisplayed())
 		  //System.out.println("Is Displayed");
 		//else System.out.println("Is Not Displayed");
-		
+	
+		System.out.println("Es wird gesucht nach: "+prop.getProperty("chessbaseSearch"));
 		WebElement elem = driver.findElement(By
                 .xpath("//img[@class='svg grpelem' and @id= 'container-top-suche' and @src='/images/suchen.svg']"));   
     JavascriptExecutor executor = (JavascriptExecutor) driver;
     executor.executeScript("arguments[0].click();", elem);
-    driver.findElement(By.id("txtSearch")).sendKeys("AlphaZero");
+    driver.findElement(By.id("txtSearch")).sendKeys(prop.getProperty("chessbaseSearch"));
     driver.findElement(By.xpath("//img[@id= 'container-search-bar']")).click();
 
 		

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public class TestZinsenrechner_Einstieg {
 	
-	static String projectLocation, browser, treiber, chromeDriverLocation,
+	static String projectLocation, browser, chromeDriverLocation,
 	              firefoxDriverLocation, baseUrl;
 	static handleProperties hdlProps;
 	static handleBrowser hdlBrowser;

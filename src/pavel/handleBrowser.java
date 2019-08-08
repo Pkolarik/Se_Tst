@@ -16,15 +16,15 @@ private WebDriver driver;
 		if(browser.contains("Firefox")){
 			System.setProperty("webdriver.gecko.driver", firefoxDriverLocation);
 			driver = new FirefoxDriver();
-/*			System.out.println("Firefox"+ Url);
-			driver.get(Url);*/
+			//System.out.println("Firefox"+ baseUrl);
+			
 		}
 		if(browser.contains("Chrome")){	
 			/*System.out.println("X"+ Url);*/
 			System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
 			
 			driver = new ChromeDriver();}
-		System.out.println("Browsertreiber ist ausgewählt.");
+		System.out.println("Browsertreiber ist ausgewählt: " + browser);
 		// Aufruf des ermittelten Browsers
 		driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

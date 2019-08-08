@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -86,11 +87,16 @@ public class TestInternetAvailability {
 		
 		//WebElement ButtonElement = driver.findElement(By.id("BtnDslCheck"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		// js.executeScript("arguments[0].scrollIntoView(true)", ButtonElement);
-		// This will scroll down the page by 4000 pixel vertical
+		//js.executeScript("arguments[0].scrollIntoView(true)", ButtonElement);
+		//This will scroll down the page by 4000 pixel vertical
 		js.executeScript("window.scrollBy(0,400)");
-		driver.findElement(By.className("border")).click();
-		driver.findElement(By.id("dslCheckPLZ")).sendKeys("80997");
+		
+		//WebElement elem = driver.findElement(By.className("border"));
+		//js.executeScript("arguments[0].click();", elem);
+		
+		
+		//driver.findElement(By.className("border")).click();
+		//driver.findElement(By.id("dslCheckPLZ")).sendKeys("80997");
 		
 		System.out.println("Alles in Ordnung");
 	} 
