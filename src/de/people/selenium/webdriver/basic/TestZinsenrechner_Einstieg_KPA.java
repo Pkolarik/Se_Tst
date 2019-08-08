@@ -29,23 +29,32 @@ public class TestZinsenrechner_Einstieg_KPA {
 		String myBrowser;
 		WebDriver myDriver;
 		// ZinsenRechner_Testfall1 MeinTestfall = new ZinsenRechner_Testfall1();
-		KPA_Testfall_2_ChessBase MeinTestfall_ChessBase = new KPA_Testfall_2_ChessBase();
+		// KPA_Testfall_2_ChessBase MeinTestfall_ChessBase = new
+		// KPA_Testfall_2_ChessBase();
+		// Zinsenrechner_Testfall3 MeinTestfall = new Zinsenrechner_Testfall3();
+
+		Zinsenrechner_Testfall4 MeinTestfall = new Zinsenrechner_Testfall4();
 		TestZinsenrechner_Ausstieg Ausstieg = new TestZinsenrechner_Ausstieg();
 
 		System.out.println("ProjectLocation ist: " + projectLocation_win); // /Users/kasia2/git/Se_Tst
-		readDataFile_mac(projectLocation_win);
+		readDataFile_win(projectLocation_win);
 		myBrowser = zrBrowserWin.setBrowser(prop_win);
 
 		System.out.println("Mein Browser: " + myBrowser);
 		myDriver = zrBrowserWin.setBrowserConfig(myBrowser, prop_win);
 		// MeinTestfall.Testfall1_defaultEinstellungen(myDriver, prop_win);
-		MeinTestfall_ChessBase.Testfall1_defaultEinstellungen(myDriver, prop_win);
+		// MeinTestfall_ChessBase.Testfall1_defaultEinstellungen(myDriver,
+		// prop_win);
+		// MeinTestfall.Testfall3_Read_XLS(myDriver, prop_win);
+		System.out.println("Vor dem Testfall4");
+		MeinTestfall.Testfall4_Read_DB(myDriver, prop_win);
+
 		// myDriver beenden
 		Ausstieg.tearDown(myDriver);
 
 	}
 
-	public static void readDataFile_mac(String projectLoc){
+	public static void readDataFile_win(String projectLoc) {
 		try {
 		 
 			InputStream input = new FileInputStream(projectLoc+"/src/de/people/selenium/webdriver/basic/data.properties");
