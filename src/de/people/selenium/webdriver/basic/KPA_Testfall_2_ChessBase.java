@@ -8,7 +8,9 @@ package de.people.selenium.webdriver.basic;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class KPA_Testfall_2_ChessBase {
 
@@ -29,9 +31,29 @@ public class KPA_Testfall_2_ChessBase {
 			// onShowHideSearchClick()' and @href= '#']")).click();
 			// driver.findElement(By.xpath("//img[@class='svg grpelem' and @id=
 			// 'container-top-suche']//parent::a")).click();
-			driver.findElement(By
-					.xpath("//img[@class='svg grpelem' and @id= 'container-top-suche' and @src='/images/suchen.svg']"))
-					.click();
+
+			WebElement elem = driver.findElement(By
+					.xpath("//img[@class='svg grpelem' and @id= 'container-top-suche' and @src='/images/suchen.svg']"));
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", elem);
+			driver.findElement(By.id("txtSearch")).sendKeys("Moskau");
+			driver.findElement(By.xpath("//img[@id= 'container-search-bar']")).click();
+
+			// driver.findElement(By .xpath("//img[@class='svg grpelem' and @id=
+			// 'container-top-suche' and @src='/images/suchen.svg']")).click();
+
+			/*
+			 * System.out.print("Tag name " +
+			 * driver.findElement(By.id("txtSearch")).getTagName()); WebElement
+			 * elem = driver.findElement(By.id("txtSearch"));
+			 * System.out.println("Schritt 3"); String js =
+			 * "arguments[0].style.height='auto'; arguments[0].style.visibility='visible';"
+			 * ; System.out.println("Schritt 4"); ((JavascriptExecutor)
+			 * driver).executeScript(js, elem); System.out.println("Schritt 5");
+			 * driver.findElement(By.id("txtSearch")).sendKeys("Moskau");
+			 * System.out.println("Schritt 6");
+			 */
+
 
 		} catch (Exception e) {
 

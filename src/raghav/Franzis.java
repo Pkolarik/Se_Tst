@@ -10,11 +10,10 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class Chessbase {
+public class Franzis {
 
 	static String browser;
 	static WebDriver driver;
@@ -77,38 +76,29 @@ public class Chessbase {
 
 	public static void runTest()  {
 		
-		driver.get(prop.getProperty("chessbaseUrl"));
+		driver.get(prop.getProperty("franzisUrl"));
 		driver.manage().window().maximize();
-				
-		//driver.findElement(By.id("idShopButtonNav")).click();
-		//driver.findElement(By.id("container-top-suche")).click();
+		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		
-		//if (driver.findElement(By.id("div-suche")).isDisplayed())
-		  //System.out.println("Is Displayed");
-		//else System.out.println("Is Not Displayed");
-		//driver.findElement(By.id("div-suche")).click();
+		driver.findElement(By.className("main-search--field")).sendKeys("COACH");
 		
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		
-		//driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).click();
+		driver.findElement(By.xpath("//a[@href='https://www.franzis.de/search?sSearch=COACH']")).click();
 		
-		//if (driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).isEnabled())
-			//  System.out.println("Is Enabled");
-			//else System.out.println("Is Not Enabled");
-				
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,100)");
 		
-		//if (driver.findElement(By.xpath("//a[@onclick='return onShowHideSearchClick()' and @href='#']")).isDisplayed())
-		  //System.out.println("Is Displayed");
-		//else System.out.println("Is Not Displayed");
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 		
-		WebElement elem = driver.findElement(By
-                .xpath("//img[@class='svg grpelem' and @id= 'container-top-suche' and @src='/images/suchen.svg']"));   
-    JavascriptExecutor executor = (JavascriptExecutor) driver;
-    executor.executeScript("arguments[0].click();", elem);
-    driver.findElement(By.id("txtSearch")).sendKeys("AlphaZero");
-    driver.findElement(By.xpath("//img[@id= 'container-search-bar']")).click();
-
+		driver.findElement(By.xpath("//select[@name='o']")).sendKeys("Erscheinungsdatum");
+		//Funktioniert so nur für Chrome, nicht aber für Firefox!
+		
+		js.executeScript("window.scrollBy(0,500)");
 		
 		System.out.println("Alles in Ordnung");
 	} 
