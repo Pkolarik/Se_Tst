@@ -63,6 +63,7 @@ public class TestZinsenrechner_BrowserSetup_KPA {
 				options.setBinary(ffBinary);
 				System.out.println("Schrit 3c");
 				driver = new FirefoxDriver(options);
+				System.out.println("Schrit 3c1");
 			} else {
 				System.out.println("Schrit 3d");
 				System.setProperty("webdriver.gecko.driver", prop.getProperty("firefoxDriverLocation"));
