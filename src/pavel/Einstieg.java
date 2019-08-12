@@ -34,7 +34,7 @@ hdlBrowser = new handleBrowser(browser, firefoxDriverLocation, chromeDriverLocat
 
 //  Testklasse 1 aufrufen
 testDriver = hdlBrowser.getDriver();
-test1 = new Testklasse1(testDriver, hdlProps);
+//test1 = new Testklasse1(testDriver, hdlProps);
 
 
 }
